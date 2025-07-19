@@ -37,6 +37,10 @@ if (config.isDevelopment) {
 	});
 }
 
+app.get("/", (_req, res) => {
+	res.send("ReWear API is running");
+});
+
 app.get("/api/health", async (_req, res) => {
 	try {
 		await prisma.$queryRaw`SELECT 1`;
